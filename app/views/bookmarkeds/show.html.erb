@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h3>Bookmarked #<%= @bookmarked.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Entree</dt>
+      <dd><%= @bookmarked.entree_id %></dd>
+
+      <dt>User</dt>
+      <dd><%= @bookmarked.user_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/bookmarkeds" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/bookmarkeds/<%= @bookmarked.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_bookmarked/<%= @bookmarked.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
