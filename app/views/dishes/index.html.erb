@@ -16,7 +16,13 @@
 
       <% @dishes.each do |dish| %>
       <tr>
-        <td><%= dish.cuisine.name %></td>
+        <td>
+          <% if dish.cuisine.present? %>
+            <a href="/cuisines/<%= dish.cuisine.id %>">
+              <%= dish.cuisine.name %>
+            </a>
+          <% end %>
+        </td>
         <td><%= dish.name %></td>
         <td>
           <a href="/dishes/<%= dish.id %>" class="btn btn-primary">Show</a>
