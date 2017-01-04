@@ -24,7 +24,7 @@
           Entree
         </label>
 
-        <input type="text" id="entree_id" name="entree_id" placeholder="Entree" class="form-control" value="<%= @bookmarked.entree_id %>">
+        <%= select_tag(:entree_id, options_from_collection_for_select(Entree.all, :id, :dish_id, @bookmarked.entree_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for user_id -->
