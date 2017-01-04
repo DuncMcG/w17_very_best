@@ -6,6 +6,7 @@ class DishesController < ApplicationController
   end
 
   def show
+    @entree = Entree.new
     @dish = Dish.find(params[:id])
 
     render("dishes/show.html.erb")

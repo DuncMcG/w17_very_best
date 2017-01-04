@@ -6,6 +6,7 @@ class EntreesController < ApplicationController
   end
 
   def show
+    @bookmarked = Bookmarked.new
     @entree = Entree.find(params[:id])
 
     render("entrees/show.html.erb")
