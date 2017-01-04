@@ -16,7 +16,7 @@
 
       <% @bookmarkeds.each do |bookmarked| %>
       <tr>
-        <td><%= bookmarked.entree_id %></td>
+        <td><%= bookmarked.entree.dish_id %></td>
         <td><%= bookmarked.user_id %></td>
         <td>
           <a href="/bookmarkeds/<%= bookmarked.id %>" class="btn btn-primary">Show</a>
