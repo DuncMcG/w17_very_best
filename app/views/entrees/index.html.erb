@@ -16,7 +16,7 @@
 
       <% @entrees.each do |entree| %>
       <tr>
-        <td><%= entree.dish_id %></td>
+        <td><%= entree.dish.cuisine_id %></td>
         <td><%= entree.venue_id %></td>
         <td>
           <a href="/entrees/<%= entree.id %>" class="btn btn-primary">Show</a>
