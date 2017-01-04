@@ -1,4 +1,14 @@
 class BookmarkedsController < ApplicationController
+  before_action :current_user_must_be_bookmarked_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_bookmarked_user
+    bookmarked = Bookmarked.find(params[:id])
+
+    unless current_user == bookmarked.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @bookmarkeds = Bookmarked.all
 
