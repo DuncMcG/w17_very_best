@@ -10,7 +10,8 @@ class BookmarkedsController < ApplicationController
   end
 
   def index
-    @bookmarkeds = Bookmarked.page(params[:page]).per(10)
+    @q = Bookmarked.ransack(params[:q])
+    @bookmarkeds = @q.result(:distinct => true).includes(:entree, :user).page(params[:page]).per(10)
 
     render("bookmarkeds/index.html.erb")
   end
