@@ -10,6 +10,10 @@ class Entree < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :users,
+             :through => :bookmarkeds,
+             :source => :user
+
   # Validations
 
 end
